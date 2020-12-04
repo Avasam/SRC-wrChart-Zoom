@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "SRC WR Chart Zoom",
-  "description": "This extension will add a very simple \"From-To\" form under the WR chart",
+  "description": "Adds simple, brwoser native, From and To date fields under the WR chart",
   "version": "1.1",
   "content_scripts": [
     {
