@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "SRC WR Chart Zoom",
-  "description": "Adds simple, brwoser native, From and To date fields under the WR chart",
+  "description": "Adds simple \"From\" and \"To\" browser native date fields under the WR chart",
   "version": "1.1",
   "content_scripts": [
     {
@@ -19,6 +19,7 @@
     "16": "icon16.png",
     "48": "icon48.png",
     "64": "icon64.png",
-    "128": "icon128.png"
+    "128": "icon128.png",
+    "300": "icon300.png"
   }
 }
