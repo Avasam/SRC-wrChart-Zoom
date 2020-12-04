@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "SRC WR Chart Zoom",
+  "description": "This extension will add a very simple \"From-To\" form under the WR chart",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.speedrun.com/*/gamestats"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
