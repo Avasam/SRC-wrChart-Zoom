@@ -30,11 +30,22 @@ var actualCode = '(' + function () {
 
   const zoomDateForm = htmlToElement(
     `<div>
-      <label for="wrChart-from" style="width: 40px">From: </label>
-      <input id="wrChart-from" onchange="onWrChartFromToChange()" type="date">
-      <br />
-      <label for="wrChart-to" style="width: 40px">To: </label>
-      <input id="wrChart-to" onchange="onWrChartFromToChange()" type="date">
+      <div class="form-group row">
+        <div class="col-2 col-md-1 text-right col-label-padding">
+          <label for="wrChart-from">From: </label>
+        </div>
+        <div>
+          <input id="wrChart-from" class="form-control" onchange="onWrChartFromToChange()" type="date">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-2 col-md-1 text-right col-label-padding">
+          <label for="wrChart-to">To: </label>
+        </div>
+        <div>
+          <input id="wrChart-to" class="form-control" onchange="onWrChartFromToChange()" type="date">
+        </div>
+      </div>
     </div>`
   );
 
