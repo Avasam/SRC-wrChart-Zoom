@@ -16,11 +16,33 @@ var actualCode = '(' + function () {
 
   let fromInputElement;
   let toInputElement;
+  let lowestValue;
+  let highestValue;
+
+  const validateFields = () => {
+    let from;
+    let to;
+    // Validation
+    if (fromInputElement.value) {
+      fromInputElement.classList.remove('border-danger');
+      from = new Date(fromInputElement.value).getTime();
+    } else {
+      fromInputElement.classList.add('border-danger');
+      from = lowestValue;
+    }
+    if (toInputElement.value) {
+      toInputElement.classList.remove('border-danger');
+      to = new Date(toInputElement.value).getTime();
+    } else {
+      toInputElement.classList.add('border-danger');
+      to = highestValue;
+    }
+
+    return [from, to + day1];
+  }
+
   const day1 = 86400000 - 1;
-  window.onWrChartFromToChange = () =>
-    zoomChart(
-      new Date(fromInputElement.value).getTime(),
-      new Date(toInputElement.value).getTime() + day1);
+  window.onWrChartFromToChange = () => zoomChart(...validateFields());
 
   const htmlToElement = (html) => {
     var template = document.createElement('template');
@@ -59,8 +81,10 @@ var actualCode = '(' + function () {
   toInputElement = document.getElementById('wrChart-to');
 
   const allDateNumbers = originalDatasets.flatMap(datasets => datasets.data).map(data => data.x)
-  fromInputElement.valueAsDate = new Date(Math.min(...allDateNumbers) * 1000);
-  toInputElement.valueAsDate = new Date(Math.max(...allDateNumbers) * 1000);
+  lowestValue = Math.min(...allDateNumbers) * 1000;
+  highestValue = Math.max(...allDateNumbers) * 1000
+  fromInputElement.valueAsDate = new Date(lowestValue);
+  toInputElement.valueAsDate = new Date(highestValue);
 } + ')();';
 
 // Inject the code string into the page
