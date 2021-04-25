@@ -2,8 +2,16 @@
   "manifest_version": 2,
   "name": "SRC WR Chart Zoom",
   "description": "Adds simple \"From\" and \"To\" browser native date fields under the WR chart",
-  "version": "1.1",
+  "version": "1.2",
   "content_scripts": [
+    {
+      "matches": [
+        "https://www.speedrun.com/*/run/*"
+      ],
+      "css": [
+        "contentScript.css"
+      ]
+    },
     {
       "matches": [
         "https://www.speedrun.com/*/gamestats"
